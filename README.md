@@ -1,2 +1,3 @@
 # Python_Class_Jogos
- Python Class Alura
+
+This code is usaded for Python Class in Alura.
