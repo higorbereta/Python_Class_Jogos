@@ -96,3 +96,24 @@ print("R$ {:07.2d}".format(1234.8))
 print("Data {:02d}/{:02d}".format(9,4)) #Para tipo inteiro
 ```
 _**Nota:** na formatação do format, após os : podemos definir a quantidade de caracteres de um valor a ser exibido, porém ao utilizar um valor antes do divisor de inteiros, caso o número seja menor, ele será preenhcido com ~~espaços vazios~~. Para substituir isso por 0, devemos colocar o 0 antes após os : dentro das {}._
+
+#### Função round()
+Essa função é utilizada para arredondar um valor float para inteiro.
+No exemplo abaixo, ele irá arredondar o valor e demostrar apenas o resultado arredondado.
+```python
+numero = 38.6
+round(numero)
+```
+
+### Módulos
+
+Os módulos são as bibliotecas que não estão em Built-In e precisam ser importadas.
+
+#### Módulo Random
+
+Esse módulo tem a função de aleatoriedade, porém é um módulo pseudo.random que ao utilizar a mesma seed, poderá gerar o mesmo valor novamente. Por isso ele é pseudo random, já que não é totalmente randómico e é previsível.
+```python
+random.seed(100)
+random.randrage(1,101)
+>>> 19
+``` 
