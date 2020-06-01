@@ -12,6 +12,11 @@
  - Cada indentação deve ter 4 espaços. _(1 tab no PyCharm)_
  - Comando input sempre receberá valores tipo string.
  
+ ## Operadores
+ 
+ - O operador **/** trás sempre um resultado float, e por isso ele é chamado de **_float division_**.
+ - Existe outro operador para divisão. O operador // que trás apenas o resultado inteiro sem arredondamento. Também chamado de **_integer division_**.
+ 
 ## Funções
  
  - type() => Essa funão verifica o tipo da variável.
@@ -77,7 +82,7 @@ Exemplo:
 for rodada in (1,2,3,4):
 print(rodada)
 ```
-####Função .format()
+###Função .format()
 
 Essa função é utilizada para formatações de valores que serão utilizados na String. 
 
@@ -97,19 +102,30 @@ print("Data {:02d}/{:02d}".format(9,4)) #Para tipo inteiro
 ```
 _**Nota:** na formatação do format, após os : podemos definir a quantidade de caracteres de um valor a ser exibido, porém ao utilizar um valor antes do divisor de inteiros, caso o número seja menor, ele será preenhcido com ~~espaços vazios~~. Para substituir isso por 0, devemos colocar o 0 antes após os : dentro das {}._
 
-#### Função round()
-Essa função é utilizada para arredondar um valor float para inteiro.
+### Função round()
+Essa função é utilizada para arredondar um valor float para inteiro. O Python 3 usa uma forma de arredondar, que também é chamado de Banker's rounding e sempre arredonda para o próximo valor par.
 No exemplo abaixo, ele irá arredondar o valor e demostrar apenas o resultado arredondado.
 ```python
 numero = 38.6
 round(numero)
 ```
+### Função abs()
 
-### Módulos
+Função utilizada para exibir somente o valor abstrato.
+
+```python
+abs(-10)
+>>> 10
+
+abs(10)
+>>> 10
+```
+
+## Módulos
 
 Os módulos são as bibliotecas que não estão em Built-In e precisam ser importadas.
 
-#### Módulo Random
+### Módulo Random
 
 Esse módulo tem a função de aleatoriedade, porém é um módulo pseudo.random que ao utilizar a mesma seed, poderá gerar o mesmo valor novamente. Por isso ele é pseudo random, já que não é totalmente randómico e é previsível.
 ```python
