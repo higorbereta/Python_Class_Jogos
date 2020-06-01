@@ -1,37 +1,59 @@
-print("*********************************")
-print("Bem vindo ao jogo de Adivinhação!")
-print("*********************************")
+import random
 
-numero_secreto = 42
-total_tentativas = 3
+def jogo_adivinha():
 
-#chute_str = input("Digite seu número: ")
-#chute = int(chute_str)
-
-for rodada in range (1, total_tentativas + 1):
-    print("Tentativas {} de {}: ".format(rodada, total_tentativas))
-    chute = int(input("Digite um número entre 1 e 100: "))
     print("*********************************")
-    print("Voce digitou ", chute)
+    print("Bem vindo ao jogo de Adivinhação!")
+    print("*********************************")
 
-    if(chute < 1 or chute > 100):
-        print("Você deve digitar um número entre 1 e 100!")
-        print("*********************************")
-        continue
+    numero_secreto = round(random.randrange(1,101))
+    total_tentativas = 0
+    pontos = 100
 
-    acertou = numero_secreto == chute #Variável booleana
-    maior = chute > numero_secreto
-    menor = chute < numero_secreto
+    print("Qual o nível de dificuldade?")
+    print("(1) Fácil - (2) Médio - (3) Difícil")
+    nivel = int(input("Define o nível: "))
 
-    if (acertou):
-        print("Voce acertou!")
-        break
+    if (nivel == 1):
+        total_tentativas = 20
+    elif(nivel == 2):
+        total_tentativas = 10
     else:
-        if(maior):
-            print("Você errou! O seu chute foi maior do que o número secreto.")
-            print("*********************************")
-        elif (menor):
-            print("Você errou! O seu chute foi menor do que o número secreto.")
-            print("*********************************")
-print("Fim do jogo")
+        total_tentativas = 5
 
+    #chute_str = input("Digite seu número: ")
+    #chute = int(chute_str)
+
+    for rodada in range (1, total_tentativas + 1):
+        print("Tentativas {} de {}: ".format(rodada, total_tentativas))
+        chute = int(input("Digite um número entre 1 e 100: "))
+        print("*********************************")
+        print("Voce digitou ", chute)
+
+        if(chute < 1 or chute > 100):
+            print("Você deve digitar um número entre 1 e 100!")
+            print("*********************************")
+            continue
+
+        acertou = numero_secreto == chute #Variável booleana
+        maior = chute > numero_secreto
+        menor = chute < numero_secreto
+
+        if (acertou):
+            print("Voce acertou e fez {} pontos !".format(pontos))
+            break
+        else:
+            if(maior):
+                print("Você errou! O seu chute foi maior do que o número secreto.")
+                diferenca = abs(chute - numero_secreto)
+                pontos = pontos - diferenca
+                print("*********************************")
+            elif (menor):
+                print("Você errou! O seu chute foi menor do que o número secreto.")
+                diferenca = abs(chute - numero_secreto)
+                pontos = pontos - diferenca
+                print("*********************************")
+    print("Fim do jogo")
+
+if(__name__ == "__main__"):
+    jogo_adivinha()
