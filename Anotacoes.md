@@ -45,43 +45,7 @@ Utiliza a função .format(). Exemplo:
 ```python
 print("Tentativas {} de {}: ".format(rodada, total_tentativas))
 ```
-### Laços de repetição
 
-- **_break_** => Interormpe o laço totalmente.
-- **_continue_** => Interrompe aquela execução do laço e vai para o próximo incremento.
-
-#### While
-
-Comando de laço padrão que executa enquanto a condição for verdadeira.
-É necessário colocar o incremento da validação da lógica dentro do while para que ele possa ser executado corretamente.
-
-Exemplo:
-
-```python
-total_tentativas = 4
-while(rodada <= total_tentativas):
-print(rodada)
-rodada = rodada + 1
- ```
-#### For
-
-Laço que já faz um auto incremento.
-
-O comando _in rage_ é utilizado para informar o range de incremento do laço, onde a primeira variável é o número inicial, e  a segunda variavél é o valor final. 
-Existe a possibilidade de se adicionar uma terceira variável, que seria o **_step_**, que indica o valor a ser incrementado em cada execução, sendo que por padrão é adicionado 1.
-
-```python
-for rodada in range(1,total_tentativas +1, 2):
-print(rodada)
- ```
-
-Também é possível utilizar o laço sem o comando **_range_**, sendo necessário informar as validações manualmente.
-Exemplo:
-
-```python
-for rodada in (1,2,3,4):
-print(rodada)
-```
 ###Função .format()
 
 Essa função é utilizada para formatações de valores que serão utilizados na String. 
@@ -121,11 +85,89 @@ abs(10)
 >>> 10
 ```
 
-## Módulos
+### Função find()
 
-Os módulos são as bibliotecas que não estão em Built-In e precisam ser importadas.
+Função do tipo String usada para buscar as informações dentro de uma String, devolvendo a posição da letra, e caso não exista a letra ele devolve posição negativa.
 
-### Módulo Random
+Uma limitação desse comando é que ele mostra apenas a primeira posição encontrada e não todas.
+```python
+palavra = "Canada"
+palavra.find("c")
+>>> 0 #Devolve a posição da letra
+
+palavra.find("b")
+>>> -1
+
+palavra.find("a")
+>>> 1
+```
+
+## Laços de repetição
+
+- **_break_** => Interormpe o laço totalmente.
+- **_continue_** => Interrompe aquela execução do laço e vai para o próximo incremento.
+
+### While
+
+Comando de laço padrão que executa enquanto a condição for verdadeira.
+É necessário colocar o incremento da validação da lógica dentro do while para que ele possa ser executado corretamente.
+
+Exemplo:
+
+```python
+total_tentativas = 4
+while(rodada <= total_tentativas):
+print(rodada)
+rodada = rodada + 1
+ ```
+### For
+
+Laço que já faz um auto incremento no medidor.
+
+#### for in range
+
+O comando _in rage_ é utilizado para informar o range de incremento do laço, onde a primeira variável é o número inicial, e  a segunda variavél é o valor final. 
+Existe a possibilidade de se adicionar uma terceira variável, que seria o **_step_**, que indica o valor a ser incrementado em cada execução, sendo que por padrão é adicionado 1.
+
+```python
+for rodada in range(1,total_tentativas +1, 2):
+print(rodada)
+ ```
+Também é possível utilizar o laço sem o comando **_range_**, sendo necessário informar as validações manualmente.
+Exemplo:
+
+```python
+for rodada in (1,2,3,4):
+print(rodada)
+```
+
+#### for _variavel_ in 
+
+Uma palavra nada mais é do que uma sequência de caracteres. Tanto isso é verdade, que podemos usar o laço for para iterar/percorrer por uma varíavel.
+
+A primeira variável é o apelido que damos para ter acesso a iteração, e a segunda variável é o item que será iterado.
+
+Nesse caso, o for será executada a quantidade de caracteres existentes na variável.
+
+Exemplo de código:
+
+```python
+posicao = 0
+palavra = "ABCD"
+for letra in palavra:
+    print(posicao)
+    posicao = posicao + 1  
+```
+O resultado exibido será:
+```
+0
+1
+2
+3
+```
+
+
+### Random
 
 Esse módulo tem a função de aleatoriedade, porém é um módulo pseudo.random que ao utilizar a mesma seed, poderá gerar o mesmo valor novamente. Por isso ele é pseudo random, já que não é totalmente randómico e é previsível.
 ```python
@@ -133,3 +175,26 @@ random.seed(100)
 random.randrage(1,101)
 >>> 19
 ``` 
+
+## Colecões
+
+###Tipos de Sequencias
+ 
+- **List**: É uma lista de variaveis. Os valores devem ser definidos entre []
+
+
+- **String**: É uma lista de letras, sem a separação por vírgula, formando uma palavra. Cada valor do índice é uma CHAR
+
+- **Tuple**: Lista imutável. Os valores devem ser definidos entre ()
+
+- **Set**: Tipo de coleção que não aceita valores iguais, e não possui um índice. Valores devem ser definidos entre {} <BR>
+   Para adicionar um valor ao set, se utiliza o comando add() (append() é apenas para List)
+   
+  ## Dictionary
+  
+Lista onde podemos vincular valores para melhor busca dentro do collection. Exemplo:
+
+``` python
+instrutores = {'Nico' : 39, 'Flavio': 37, 'Marcos' : 30}
+```
+
