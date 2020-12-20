@@ -167,11 +167,7 @@ O resultado exibido será:
 ```
 
 
-## Módulos
-
-Os módulos são as bibliotecas que não estão em Built-In e precisam ser importadas.
-
-### Módulo Random
+### Random
 
 Esse módulo tem a função de aleatoriedade, porém é um módulo pseudo.random que ao utilizar a mesma seed, poderá gerar o mesmo valor novamente. Por isso ele é pseudo random, já que não é totalmente randómico e é previsível.
 ```python
@@ -179,3 +175,26 @@ random.seed(100)
 random.randrage(1,101)
 >>> 19
 ``` 
+
+## Colecões
+
+###Tipos de Sequencias
+ 
+- **List**: É uma lista de variaveis. Os valores devem ser definidos entre []
+
+
+- **String**: É uma lista de letras, sem a separação por vírgula, formando uma palavra. Cada valor do índice é uma CHAR
+
+- **Tuple**: Lista imutável. Os valores devem ser definidos entre ()
+
+- **Set**: Tipo de coleção que não aceita valores iguais, e não possui um índice. Valores devem ser definidos entre {} <BR>
+   Para adicionar um valor ao set, se utiliza o comando add() (append() é apenas para List)
+   
+  ## Dictionary
+  
+Lista onde podemos vincular valores para melhor busca dentro do collection. Exemplo:
+
+``` python
+instrutores = {'Nico' : 39, 'Flavio': 37, 'Marcos' : 30}
+```
+
