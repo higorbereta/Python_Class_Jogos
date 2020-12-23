@@ -5,10 +5,7 @@ def jogo_forca():
     print("**********************************")
 
     palavra_secreta = input("Palavra secreta: ").upper()
-    letras_acertadas = []
-
-    for count in palavra_secreta:
-        letras_acertadas.append("_")
+    letras_acertadas = ["_" for count in palavra_secreta]
 
     enforcado = False
     acertou = False
@@ -35,8 +32,6 @@ def jogo_forca():
             chances -= 1
 
         qnt_encontrada = 0
-
-
 
         enforcado = chances == 0
         acertou = "_" not in letras_acertadas
