@@ -176,25 +176,49 @@ random.randrage(1,101)
 >>> 19
 ``` 
 
-## Colecões
+## Coleções
 
-###Tipos de Sequencias
- 
-- **List**: É uma lista de variaveis. Os valores devem ser definidos entre []
+### List
 
+- Lista sequencia de valores.
+- List e String são parecidos.
+- Os valores podem ser alterados por comandos como append() e pop().
+- Os valores devem ser declarados entre [ ] 
 
-- **String**: É uma lista de letras, sem a separação por vírgula, formando uma palavra. Cada valor do índice é uma CHAR
+#### List Comprehension
 
-- **Tuple**: Lista imutável. Os valores devem ser definidos entre ()
+- Forma de preencher uma lista através de código.
+- Exemplo:
 
-- **Set**: Tipo de coleção que não aceita valores iguais, e não possui um índice. Valores devem ser definidos entre {} <BR>
-   Para adicionar um valor ao set, se utiliza o comando add() (append() é apenas para List)
-   
-  ## Dictionary
-  
-Lista onde podemos vincular valores para melhor busca dentro do collection. Exemplo:
+```python
+inteiros = [1,3,4,5,7,8,9]
+pares = [x for x in inteiros if x % 2 == 0]COPIAR 
+```
+
+### Tuple
+
+- Sequencia tuple não pode ser alterada. 
+- Comandos como .append ou .pop() não funcionam na Tuple.
+- Diferente da lista que é declarada com [ ], os valores da tuple é declardo com ( )
+- A tuple pode ser inserida dentro de uma lista.
+
+### Set
+- O set não é uma sequencia e por isso não possui um índice.
+- O set não é ordenado
+- Os valores devem ser declarados entre { }
+- Função para adicionar elementos é a add() - append não funciona
+
+###Dictionary
+- O dicionário é dinifido igual um SET, porém serve para vincular dois valores, facilitando uma futura busca.
 
 ``` python
 instrutores = {'Nico' : 39, 'Flavio': 37, 'Marcos' : 30}
 ```
 
+## Arquivos no Python
+
+### Comando Open
+
+- Comando para abrir um arquivo, onde temos que definir alguns parametros no código.
+- Função Built-in
+   
